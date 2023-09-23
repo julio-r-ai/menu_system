@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Roboto+Condensed:wght@300&family=Roboto:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Roboto+Condensed:wght@300&family=Roboto:wght@400;700&family=Tangerine&display=swap'); 
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+body{
+  background-color: #d0d0d0;
+}
+
+.header{
+  width: 100%;
+  height: 90px;
+  background-color: #000000;
+  box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.718);
+  padding: 8px 50px 8px 50px ;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 1;
+  top: -100px;
+  margin-top: 100px; 
+  border-bottom: 3px solid rgba(255, 140, 0, 0.575);
+}
+
+.header h1{
+  font-size: 60px;
+  color: rgba(255, 140, 0, 0.575);
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Tangerine', cursive;
+}
+
+.sidBar{
+  width: 230px;
+  background-color: #000000;
+  padding: 50px 50px 50px 20px;
+  height: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
+  position: fixed;
+  top: -0px;
+}
+
+.sidBar li{
+  padding-top: 80px;
+  padding-left: 30px;
+  color: rgba(255, 140, 0, 0.575);
+  list-style: none;
+}
+
+.sidBar li ul{
+  margin-bottom: 20px;
+}
+
+.sidBar a{
+  text-decoration: none;
+  color: rgba(255, 140, 0, 0.575);
+}
+
+.sidBar a:hover{
+  font-size: 22px;
+  color: #a6a6a6;
+}
+
+.general{
+  margin: 110px 10px 30px 250px;
+}
+
+.general h1{
+  font-size: 30px;
+  color: black;
+}
+
+.card{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 30px;
+  margin-top: 20px;
+
+}
+
+.card img{
+  width: 200px;
+  height: 200px;
+}
+.card button{
+  width: 80px;
+}
+
+.card-inter{
+  display: flex;
+  gap: 20px;
+}
+
+#buttonVer{
+  font-size: 16px;
+  color: #DCDCDC;
+  background-color: #000000;
+  border: none;
+  width: 50px;
+  height: 30px;
+  font-weight: bolder;
+  margin-top: 150px;
+}
+
+#descriH2{
+  margin-top: 20px;
+}
+
+#descriH3{
+  margin-top: 100px;
+  font-size: 20px;
+}
+
+#buttonVer:hover{
+  font-size: 16px;
+  color: #DCDCDC;
+  background-color: #000000;
+  border: none;
+  width: 50px;
+  height: 30px;
+  font-weight: bolder;
+  box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
+}
+
+.login form{
+  background-color: #000000;
+  width: 300px;
+  padding: 20px 20px 20px 20px;
+  margin: auto;
+  margin-top: 200px;
+  border-radius: 5px;
+}
+
+form input{
+  width: 100%;
+  height: 34px;
+  background-color: #a6a6a6;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+form h2{
+  text-align: center;
+  color: rgba(255, 140, 0, 0.575);
+}
+
+form button{
+  margin-top: 20px;
+  height: 34px;
+  width: 100%;
+  font-size: 15px;
+}
+
+#formDelete button{
+  margin-top: 0px;
+}
+
+#buttomAcoes{
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+/* Admin */
+
+.registerAdmin{
+  background-color: #000000;
+  color: #DCDCDC;
+  font-size: 20px;
+  padding: 30px 30px 30px 30px;
+}
+
+.registerAdmin input{
+  width: 100%;
+  height: 35px;
+  font-size: 18px;
+  background-color: rgb(211, 207, 207);
+  border: none;
+}
+
+.registerAdmin select{
+  width: 100%;
+  height: 35px;
+  font-size: 18px;
+  background-color: rgb(211, 207, 207);
+}
+
+.registerAdmin button{
+  background-color: rgb(122, 211, 122);
+  color: white;
+  font-size: 20px;
+  width: 200px;
+  border: none;
+}
+
+.registerAdmin button:hover{
+  background-color: rgb(122, 211, 122);
+  color: white;
+  font-size: 22px;
+  width: 203px;
+  border: none;
+}
+
+/* Tabela */
+
+table, th, td{
+  border: 1px solid #eae4e4;
+} 
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr{
+  background-color: #DCDCDC;
+}
+
+th, td{
+  padding: 8px;
+  text-align: center;
+}
+
+th{
+  height: 40px;
+  vertical-align: bottom;
+}
+
+
+#view{
+  background-color: rgb(96, 96, 255);
+  color: white;
+  width: 80px;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+  text-decoration: none;
+}
+
+
+#view:hover{
+  background-color: rgb(96, 96, 255);
+  color: white;
+  width: 80px;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+  box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
+}
+
+#edit{
+  background-color: rgb(247, 156, 0);
+  color: white;
+  width: 80px;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+}
+
+#edit:hover{
+  background-color: rgb(247, 156, 0);
+  color: white;
+  width: 80px;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+  box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
+}
+
+#delete{
+  background-color: rgb(255, 108, 108);
+  color: white;
+  width: 80px;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+}
+
+#delete:hover{
+  background-color: rgb(255, 108, 108);
+  color: white;
+  width: 80px;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+  box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
+}
+
+#msgProduto p{
+  color: white;
+  background-color: rgba(102, 220, 102, 0.57);
+  margin-top: 20px;
+  margin: auto;
+  width: 100%;
+  height: 45px;
+  text-align: center;
+  padding-top: 8px;
+  font-size: 25px;
+}
+
+td img{
+  width: 45px;
+  height: 45px;
+}
+
+/* Show do Produto */
+
+.showProduto{
+  display: flex;
+  flex-direction: column;
+}
+
+.showProduto img{
+  width: 500px;
+}
+
+.headerShow{
+  width: 100%;
+  height: 65px;
+  display: flex;
+  justify-content: space-around;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  background-color: #000000;
+  color: rgb(247, 156, 0);
+  border-bottom: 3px solid rgb(247, 156, 0);
+}
+
+.productDescri{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #DCDCDC;
+  border-bottom: 3px solid #a6a6a6;
+}
+
+.footerShow{
+  display: flex;
+  justify-content: space-around;
+  justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #DCDCDC;
+}
+
+.footerShow button{
+  width: 100px;
+  height: 35px;
+  font-size: 20px;
+  color: #eae4e4;
+  background-color: rgb(202, 62, 62);
+  border: none;
+  font-weight: bolder;
+}
+
+.footerShow button:hover{
+  width: 100px;
+  height: 35px;
+  font-size: 20px;
+  color: #eae4e4;
+  background-color: rgb(202, 62, 62);
+  border: none;
+  font-weight: bolder;
+  box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
+}
+
+.priceShow h2{
+  font-size: 18px;
+}
