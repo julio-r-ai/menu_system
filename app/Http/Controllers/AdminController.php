@@ -42,4 +42,24 @@ class AdminController extends Controller
 
         return redirect('/admin')->with('msg', 'Produto cadastrado com sucesso!');
     }
+
+    public function showProduto($id){
+        $products = Product::findOrFail($id);
+        return view('showProduto', ['products' => $products]);
+    }
+
+    public function edit($id){
+        $products = Product::findOrFail($id);
+        return view('edit', ['products' => $products]);
+    } 
+
+    public function update(Request $request){
+        Product::findOrFail($request->id)->update($request->all()); 
+        return redirect('admin')->with('msg', 'Produto editado com sucesso!');
+    }
+
+    public function destroy($id){
+        Product::findOrFail($id)->delete();
+        return redirect('/admin')->with('msg', 'Produto excluido com sucesso!');
+    }
 }

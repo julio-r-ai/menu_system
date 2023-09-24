@@ -62,24 +62,4 @@ class ProductController extends Controller
         $products = Product::all();
         return view('vinho', ['products' => $products]);
     }
-
-    public function showProduto($id){
-        $products = Product::findOrFail($id);
-        return view('showProduto', ['products' => $products]);
-    }
-
-    public function edit($id){
-        $products = Product::findOrFail($id);
-        return view('edit', ['products' => $products]);
-    } 
-
-    public function update(Request $request){
-        Product::findOrFail($request->id)->update($request->all());
-        return view('edit')->with('msg', 'Produto editado com sucesso!');
-    }
-
-    public function destroy($id){
-        Product::findOrFail($id)->delete();
-        return redirect('/admin')->with('msg', 'Produto excluido com sucesso!');
-    }
 }

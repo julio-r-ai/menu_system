@@ -9,8 +9,8 @@
     <div class="registerAdmin">
 
         <div><h1>Editando o Produto: {{ $products->description }} </h1></div>
-        
-        <form action="/admin/update/{{ $products->id }}" method="POST" id="formCadastroProduct">
+
+        <form action="/edit/{{ $products->id }}" method="POST" id="formCadastroProduct">
             @csrf
             @method('PUT')
             <div>
