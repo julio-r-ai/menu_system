@@ -19,8 +19,10 @@ Route::get('/sushi', [ProductController::class, 'sushi']);
 Route::get('/vinho', [ProductController::class, 'vinho']);
 Route::get('/edit/{id}', [AdminController::class, 'edit']); 
 Route::get('/admin', [AdminController::class, 'admin']);
+Route::get('/loginForm', [AdminController::class, 'loginForm']);
 
 Route::post('/admin', [AdminController::class, 'store']);
+Route::post('/admin/auth', [AdminController::class, 'auth']);
 
 Route::delete('/admin/{id}', [AdminController::class, 'destroy']);      
 Route::get('/showProduto/{id}', [AdminController::class, 'showProduto']);
