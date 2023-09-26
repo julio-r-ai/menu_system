@@ -19,12 +19,21 @@ Route::get('/sushi', [ProductController::class, 'sushi']);
 Route::get('/vinho', [ProductController::class, 'vinho']);
 Route::get('/edit/{id}', [AdminController::class, 'edit']); 
 Route::get('/admin', [AdminController::class, 'admin']);
-Route::get('/loginForm', [AdminController::class, 'loginForm']);
+Route::get('/addProduct', [ProductController::class, 'addProduct']);
 
 Route::post('/admin', [AdminController::class, 'store']);
-Route::post('/admin/auth', [AdminController::class, 'auth']);
 
 Route::delete('/admin/{id}', [AdminController::class, 'destroy']);      
 Route::get('/showProduto/{id}', [AdminController::class, 'showProduto']);
 Route::put('/edit/{id}', [AdminController::class, 'update']);
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

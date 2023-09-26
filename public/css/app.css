@@ -163,7 +163,8 @@ form button{
   height: 34px;
   width: 100%;
   font-size: 15px;
-}
+} 
+
 
 #formDelete button{
   margin-top: 0px;
@@ -382,4 +383,18 @@ td img{
 
 .priceShow h2{
   font-size: 18px;
+}
+
+#headerProducs{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#formButton{
+  background-color: rgba(130, 242, 130, 0.742);
+  color: white;
+  width: 330px;
+  height: 50px;
+  font-size: 18px;
+  border: none;
 }

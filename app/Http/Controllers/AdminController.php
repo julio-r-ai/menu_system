@@ -64,17 +64,4 @@ class AdminController extends Controller
         return redirect('/admin')->with('msg', 'Produto excluido com sucesso!');
     }
 
-    public function loginForm(){
-        return view('loginForm');
-    }
-
-    public function auth(Request $request){
-
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            dd('voce esta logado');
-        }else{
-            dd('voce nao esta logado');
-        }
-
-    }
 }
