@@ -17,15 +17,14 @@ Route::get('/sobremesa', [ProductController::class, 'sobremesa']);
 Route::get('/suco', [ProductController::class, 'suco']);
 Route::get('/sushi', [ProductController::class, 'sushi']);
 Route::get('/vinho', [ProductController::class, 'vinho']);
-Route::get('/edit/{id}', [AdminController::class, 'edit']); 
-Route::get('/admin', [AdminController::class, 'admin']);
+Route::get('/edit/{id}', [ProductController::class, 'edit']); ;
 Route::get('/addProduct', [ProductController::class, 'addProduct']);
 
-Route::post('/admin', [AdminController::class, 'store']);
+Route::post('/dashboard', [ProductController::class, 'store']);
 
-Route::delete('/admin/{id}', [AdminController::class, 'destroy']);      
-Route::get('/showProduto/{id}', [AdminController::class, 'showProduto']);
-Route::put('/edit/{id}', [AdminController::class, 'update']);
+Route::delete('/admin/{id}', [ProductController::class, 'destroy']);      
+Route::get('/showProduto/{id}', [ProductController::class, 'showProduto']);
+Route::put('/edit/{id}', [ProductController::class, 'update']);
 
 
 Route::middleware([

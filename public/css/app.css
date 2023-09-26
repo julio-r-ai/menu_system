@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Roboto+Condensed:wght@300&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Roboto+Condensed:wght@300&family=Roboto:wght@400;700&family=Tangerine&display=swap'); 
 
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
   font-family: 'Roboto', sans-serif;
-  font-family: 'Roboto Condensed', sans-serif;
 }
 
 body{
@@ -245,7 +242,7 @@ th{
 #view{
   background-color: rgb(96, 96, 255);
   color: white;
-  width: 80px;
+  width: 90px;
   height: 30px;
   font-size: 18px;
   border: none;
@@ -256,7 +253,7 @@ th{
 #view:hover{
   background-color: rgb(96, 96, 255);
   color: white;
-  width: 80px;
+  width: 90px;
   height: 30px;
   font-size: 18px;
   border: none;
@@ -266,7 +263,7 @@ th{
 #edit{
   background-color: rgb(247, 156, 0);
   color: white;
-  width: 80px;
+  width: 90px;
   height: 30px;
   font-size: 18px;
   border: none;
@@ -275,7 +272,7 @@ th{
 #edit:hover{
   background-color: rgb(247, 156, 0);
   color: white;
-  width: 80px;
+  width: 90px;
   height: 30px;
   font-size: 18px;
   border: none;
@@ -285,7 +282,7 @@ th{
 #delete{
   background-color: rgb(255, 108, 108);
   color: white;
-  width: 80px;
+  width: 90px;
   height: 30px;
   font-size: 18px;
   border: none;
@@ -294,7 +291,7 @@ th{
 #delete:hover{
   background-color: rgb(255, 108, 108);
   color: white;
-  width: 80px;
+  width: 90px;
   height: 30px;
   font-size: 18px;
   border: none;
@@ -391,10 +388,20 @@ td img{
 }
 
 #formButton{
-  background-color: rgba(130, 242, 130, 0.742);
+  background-color: rgba(85, 187, 85, 0.947);
   color: white;
-  width: 330px;
-  height: 50px;
+  width: 200px;
+  height: 35px;
   font-size: 18px;
   border: none;
+}
+
+#formButton:hover{
+  background-color: rgba(85, 187, 85, 0.947);
+  color: white;
+  width: 200px;
+  height: 35px;
+  font-size: 18px;
+  border: none;
+  box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
 }

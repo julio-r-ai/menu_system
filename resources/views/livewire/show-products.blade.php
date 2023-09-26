@@ -20,8 +20,29 @@
                         <td><img src="{{$product->img}}" alt="imagem"></td>
                         <td>{{$product->description}}</td>
                         <td>{{$product->price}}</td>
-                        <td>{{$product->category}}</td>
-
+                        @if($product->category == 0)         
+                            <td>Cerveja</td> 
+                        @elseif($product->category == 1)
+                            <td>Coquetel</td>
+                        @elseif($product->category == 2)
+                            <td>Diversos</td>
+                        @elseif($product->category == 3)
+                            <td>Drinks</td>
+                        @elseif($product->category == 4)
+                            <td>Energético</td>
+                        @elseif($product->category == 5)
+                            <td>Petiscos</td>
+                        @elseif($product->category == 6)
+                            <td>Refrigerantes</td>
+                        @elseif($product->category == 7)
+                            <td>Sobremesa</td>
+                        @elseif($product->category == 8)
+                            <td>Suco</td>
+                        @elseif($product->category == 9)
+                            <td>Sushi</td>
+                        @elseif($product->category == 10)
+                            <td>Vinho</td>    
+                        @endif
                         <td>
                             <div>
                                 <a href="/showProduto/{{ $product->id }}" ><button id="view">Visualizar</button></a>

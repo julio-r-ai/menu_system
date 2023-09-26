@@ -1,32 +1,38 @@
-<link rel="stylesheet" href="/css/app.css">
-
 @section('title', 'Aditar Produto')
 
 @section('content')
 
-<div class="admin">
+<x-guest-layout>
+    <x-authentication-card>
+        <x-slot name="logo">
+            <x-authentication-card-logo />
+        </x-slot>
 
-    <div class="registerAdmin">
+        <x-validation-errors class="mb-4" />
 
-        <div><h1>Editando o Produto: {{ $products->description }} </h1></div>
-
-        <form action="/edit/{{ $products->id }}" method="POST" id="formCadastroProduct">
+        <form method="POST" action="/edit/{{ $products->id }}">
             @csrf
             @method('PUT')
             <div>
-                <label for="">Adicione uma foto</label>
-                <input type="text" name="img" id="img" value="{{ $products->img }}">
+                <h1>Editando o Produto: {{ $products->description }} </h1>
             </div>
             <div>
-                <label for="">Descrição</label>
-                <input type="text" name="description"  id="description" value="{{ $products->description }}">
+                <x-label for="name" value="{{ __('URL da Imagem') }}" />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="img" :value="old('img')" required autofocus autocomplete="img" value="{{ $products->img }}" />
             </div>
-            <div>
-                <label for="">Preço</label>
-                <input type="text" name="price" id="price" value="{{ $products->price }}">
+
+            <div class="mt-4">
+                <x-label for="description" value="{{ __('Descrição') }}" />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="description" :value="old('description')" required autocomplete="description" value="{{ $products->description }}"/>
             </div>
+
             <div>
-                <label for="">Categoria</label>
+                <x-label for="price" value="{{ __('Preço') }}" />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="price" :value="old('name')" required autofocus autocomplete="name" value="{{ $products->price }}"/>
+            </div>
+
+            <div>
+                <x-label for="category" value="{{ __('Categoria') }}" />
                 <select name="category" id="category">
                     <option selected disabled>Selecione</option>
                     <option value="0">Cerveja</option>
@@ -42,9 +48,30 @@
                     <option value="10">Vinho</option>
                 </select>
             </div>
-            <div><button type="submit">Editar</button></div>
+
+            
+
+            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+                <div class="mt-4">
+                    <x-label for="terms">
+                        <div class="flex items-center">
+                            <x-checkbox name="terms" id="terms" required />
+
+                            <div class="ml-2">
+                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
+                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Terms of Service').'</a>',
+                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Privacy Policy').'</a>',
+                                ]) !!}
+                            </div>
+                        </div>
+                    </x-label>
+                </div>
+            @endif
+            <div class="flex items-center justify-end mt-4">
+                <x-button class="ml-4" type="submit">
+                    {{ __('Editar Produto') }}
+                </x-button>
+            </div>
         </form>
-        @if(session('msg'))
-            <div id="msgProduto"><p>{{session('msg')}}</p></div>
-        @endif
-</div>
+    </x-authentication-card>
+</x-guest-layout>

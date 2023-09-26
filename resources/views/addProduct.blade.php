@@ -1,6 +1,4 @@
-
-
-<x-guest-layout>
+    <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
@@ -8,19 +6,19 @@
 
         <x-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('dashboard') }}">
             @csrf
-
-            <h1>Adicionar Produto</h1>
-
+            <div>
+                <h1>Adicionar Produto</h1>
+            </div>
             <div>
                 <x-label for="name" value="{{ __('URL da Imagem') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="img" :value="old('img')" required autofocus autocomplete="img" />
             </div>
 
             <div class="mt-4">
                 <x-label for="description" value="{{ __('Descrição') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="description" :value="old('email')" required autocomplete="username" />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="description" :value="old('name')" required autocomplete="name" />
             </div>
 
             <div>
@@ -64,11 +62,8 @@
                     </x-label>
                 </div>
             @endif
-
             <div class="flex items-center justify-end mt-4">
-                
-
-                <x-button class="ml-4">
+                <x-button class="ml-4" type="submit">
                     {{ __('Adicionar Produto') }}
                 </x-button>
             </div>

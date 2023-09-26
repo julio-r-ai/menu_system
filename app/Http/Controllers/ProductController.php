@@ -67,5 +67,41 @@ class ProductController extends Controller
         return view('addProduct');
     }
 
+    public function store(Request $request){
 
+        $product = new Product;
+
+        $product->img = $request->img;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->category = $request->category;
+        $product->save(); 
+
+        return redirect('/dashboard')->with('msg', 'Produto cadastrado com sucesso!');
+    }   
+    
+    public function edit($id){
+        $products = Product::findOrFail($id);
+        return view('edit', ['products' => $products]);
+    } 
+
+    public function update(Request $request){
+        Product::findOrFail($request->id)->update($request->all()); 
+        return redirect('dashboard')->with('msg', 'Produto editado com sucesso!') ;
+    }
+    
+    public function admin(){
+        $products = Product::all();
+        return view('admin', ['products' => $products]);
+    }
+
+    public function showProduto($id){
+        $products = Product::findOrFail($id);
+        return view('showProduto', ['products' => $products]);
+    }
+
+    public function destroy($id){
+        Product::findOrFail($id)->delete();
+        return redirect('/admin')->with('msg', 'Produto excluido com sucesso!');
+    }
 }
