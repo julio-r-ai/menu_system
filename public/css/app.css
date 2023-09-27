@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Roboto+Condensed:wght@300&family=Roboto:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&family=Roboto+Condensed:wght@300&family=Roboto:wght@400;700&family=Tangerine&display=swap'); 
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
@@ -57,11 +61,15 @@ body{
 
 .sidBar li ul{
   margin-bottom: 20px;
+ 
 }
 
 .sidBar a{
   text-decoration: none;
   color: rgba(255, 140, 0, 0.575);
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .sidBar a:hover{
@@ -76,6 +84,12 @@ body{
 .general h1{
   font-size: 30px;
   color: black;
+}
+
+.general h1, h2, h3, a{
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .card{
@@ -320,6 +334,12 @@ td img{
 .showProduto{
   display: flex;
   flex-direction: column;
+}
+
+.showProduto h1, h2, button{ 
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;  
 }
 
 .showProduto img{

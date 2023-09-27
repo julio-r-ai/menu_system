@@ -7,21 +7,17 @@
 @section('content')
 
 <div class="general">
-    <h1>Vinhos</h1>
+    {{-- <h1>Vinhos</h1> --}}
     @foreach ($products as $product)
-
-    @if ($product->category == 10)
-       
+    @if ($product->category == 10)   
         <div class="card">
             <div class="card-inter">
             <div>
-                    <img src="{{$product->img}}" alt="imagem">
+                <img src="{{$product->img}}" alt="imagem">
             </div>
                 <div>
-                    
                     <h2 id="descriH2">{{$product->description}}</h2>
                     <h2 id="descriH3">R$ {{$product->price}}</h2>
-                    
                 </div>
             </div>
             <div>
@@ -30,5 +26,4 @@
         </div> 
     @endif
     @endforeach 
-    
 </div>

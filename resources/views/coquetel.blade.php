@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="general">
-    <h1>Pagina de Coquetel</h1>
+    {{-- <h1>Pagina de Coquetel</h1> --}}
     @foreach ($products as $product)
         @if ($product->category == 1)
             <div class="card">

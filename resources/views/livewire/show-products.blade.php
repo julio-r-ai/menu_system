@@ -12,7 +12,6 @@
                     <th></th>
                     <th>Ações</th>
                     <th></th>
-
                 </tr>
                 @foreach ($products as $product)
                     </tr>

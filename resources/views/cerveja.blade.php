@@ -8,7 +8,7 @@
 
 <div class="general">
 
-    <h1>Cervejas</h1>
+    {{-- <h1>Cervejas</h1> --}}
 
     @foreach ($products as $product)
 
