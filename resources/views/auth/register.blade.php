@@ -1,3 +1,4 @@
+<title><?php echo "Cardápio" ?></title>
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">

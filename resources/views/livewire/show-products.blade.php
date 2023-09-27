@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/app.css">
+<title><?php echo "Cardápio" ?></title>
 
 <div>
         <table>

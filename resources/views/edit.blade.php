@@ -1,4 +1,4 @@
-@section('title', 'Aditar Produto')
+<title><?php echo "Editar Produto" ?></title>
 
 @section('content')
 
