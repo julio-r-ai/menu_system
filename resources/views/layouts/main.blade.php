@@ -6,9 +6,12 @@
    <title>@yield('title')</title>
 
    <link rel="stylesheet" href="/css/app.css">
+   <script src="/js/app.js" defer></script>
 </head>
-<body>
+<body onload="showLoading()"> 
    @yield('content')
+   {{-- @livewire('loading-animation') --}}
+  
    <header class="header">
        <div>
            <h1>Cardápio</h1>
@@ -31,5 +34,6 @@
            </li>
        </div>
    </div>
+ 
 </body>
 </html>

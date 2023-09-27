@@ -14,16 +14,16 @@
             @csrf
             @method('PUT')
             <div>
-                <h1>Editando o Produto: {{ $products->description }} </h1>
+                <h1>Editando o Produto: {{-- {{ $products->description }} --}} </h1>
             </div>
             <div>
                 <x-label for="name" value="{{ __('URL da Imagem') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="img" :value="old('img')" required autofocus autocomplete="img" value="{{ $products->img }}" />
             </div>
 
-            <div class="mt-4">
-                <x-label for="description" value="{{ __('Descrição') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="description" :value="old('description')" required autocomplete="description" value="{{ $products->description }}"/>
+            <div>
+                <x-label for="name" value="{{ __('Descricao') }}" />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="description" :value="old('nome')" required autofocus autocomplete="neme" value="{{ $products->description }}" />
             </div>
 
             <div>
@@ -48,9 +48,7 @@
                     <option value="10">Vinho</option>
                 </select>
             </div>
-
             
-
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-label for="terms">

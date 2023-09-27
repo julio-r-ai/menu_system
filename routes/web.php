@@ -19,6 +19,8 @@ Route::get('/sushi', [ProductController::class, 'sushi']);
 Route::get('/vinho', [ProductController::class, 'vinho']);
 Route::get('/edit/{id}', [ProductController::class, 'edit']); ;
 Route::get('/addProduct', [ProductController::class, 'addProduct']);
+Route::get('/carregando', [ProductController::class, 'carregando']);
+
 
 Route::post('/dashboard', [ProductController::class, 'store']);
 

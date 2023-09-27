@@ -1,9 +1,11 @@
+<script src="/js/app.js" defer></script>
+<title><?php echo "Cardápio" ?></title>
+<body onload="showLoading()"></body>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Produtos
         </h2>
-        
     </x-slot>
 
     @if(session('msg'))

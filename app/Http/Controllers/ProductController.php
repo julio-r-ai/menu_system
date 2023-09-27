@@ -75,6 +75,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->category = $request->category;
+        
         $product->save(); 
 
         return redirect('/dashboard')->with('msg', 'Produto cadastrado com sucesso!');
@@ -103,5 +104,9 @@ class ProductController extends Controller
     public function destroy($id){
         Product::findOrFail($id)->delete();
         return redirect('/admin')->with('msg', 'Produto excluido com sucesso!');
+    }
+
+    public function carregado(){
+        return view('carregando');
     }
 }

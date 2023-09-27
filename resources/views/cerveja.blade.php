@@ -6,10 +6,9 @@
 
 @section('content')
 
-<div class="general">
-
+<div class="general" onload="showLoading()">
+    
     {{-- <h1>Cervejas</h1> --}}
-
     @foreach ($products as $product)
 
         @if ($product->category == 0)   
@@ -30,4 +29,7 @@
         @endif
     @endforeach 
 
+  
+
 </div>  
+
