@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="card-inter">
                 <div>
-                        <img src="{{$product->img}}" alt="imagem">
+                        <img src="img/products/{{$product->img}}" alt="imagem">
                 </div>
                     <div>
                         

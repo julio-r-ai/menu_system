@@ -12,7 +12,7 @@
     </div>
     <div class="productDescri">
         <div>
-            <img src="{{$products->img}}" alt="Imagem do Produto">
+            <img src="img/products{{$products->img}}" alt="Imagem do Produto">
         </div>
     </div>
     <div class="footerShow">
