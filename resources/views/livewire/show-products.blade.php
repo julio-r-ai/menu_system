@@ -17,7 +17,7 @@
                 @foreach ($products as $product)
                     </tr>
                         <td>{{$product->id}}</td>
-                        <td><img src="{{$product->img}}" alt="imagem"></td>
+                        <td><img src="img/products/{{$product->img}}" alt="imagem"></td>
                         <td>{{$product->description}}</td>
                         <td>{{$product->price}}</td>
                         @if($product->category == 0)         

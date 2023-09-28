@@ -69,42 +69,26 @@ class ProductController extends Controller
 
     public function store(Request $request){
 
-
-        
-
-        /* $product = new Product;
-
         $product = new Product;
 
-        $product->img = $request->img;
         $product->description = $request->description;
         $product->price = $request->price;
         $product->category = $request->category;
-        
-        $product->save();   */
 
-        /* if($request->hasFile('img')){
-           
-            $filenameWithExt = $request->file('img')->getClientOriginalName();
-            
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            
-            $extension = $request->file('img')->getClientOriginalExtension();
-            
-            $fileNameToStore= $filename.'_'.time().'.'.$extension;
-            
-            $path = $request->file('img')->storeAs('public/img', $fileNameToStore);
-        } else {
-            $fileNameToStore = 'noimage.png';
+        if($request->hasFile('img') && $request->file('img')->isValid()){
+            $requestImage = $request->img;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($request->img->getClientOriginalName().strtotime('now')).'.'.$extension;
+
+            $request->img->move(public_path('img/products'), $imageName);
+
+            $product->img = $imageName;
         }
-       
-        $product = Product::create([
-            'description' => mb_strtolower($request->description),
-            'price' => mb_strtolower($request->price),
-            'category' => mb_strtolower($request->category),
-            'img' => $fileNameToStore
-        ]);
- */
+
+        $product->save();  
+
         return redirect('/dashboard')->with('msg', 'Produto adicionado com sucesso!');
     }   
     
@@ -117,11 +101,6 @@ class ProductController extends Controller
         Product::findOrFail($request->id)->update($request->all()); 
         return redirect('dashboard')->with('msg', 'Produto editado com sucesso!') ;
     }
-    
-    public function admin(){
-        $products = Product::all();
-        return view('admin', ['products' => $products]);
-    }
 
     public function showProduto($id){
         $products = Product::findOrFail($id);
@@ -130,7 +109,7 @@ class ProductController extends Controller
 
     public function destroy($id){
         Product::findOrFail($id)->delete();
-        return redirect('/admin')->with('msg', 'Produto excluido com sucesso!');
+        return redirect('/dashboard')->with('msg', 'Produto excluido com sucesso!');
     }
 
     public function carregado(){
