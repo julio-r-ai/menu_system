@@ -6,14 +6,10 @@
 
         <x-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('dashboard') }}">
+        <form method="POST" action="{{ route('dashboard') }}" enctype=”multipart/form-data”>
             @csrf
             <div>
                 <h1>Adicionar Produto</h1>
-            </div>
-            <div>
-                <x-label for="name" value="{{ __('URL da Imagem') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="img" :value="old('img')" required autofocus autocomplete="img" />
             </div>
 
             <div class="mt-4">
@@ -44,6 +40,10 @@
                 </select>
             </div>
 
+            <div>
+                <x-label for="name" value="{{ __('Carregue uma Imagem') }}" />
+                <x-input id="name" class="block mt-1 w-full" type="file" name="img" :value="old('img')" required autofocus autocomplete="img" />
+            </div>  
             
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())

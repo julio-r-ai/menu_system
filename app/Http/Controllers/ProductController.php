@@ -69,6 +69,11 @@ class ProductController extends Controller
 
     public function store(Request $request){
 
+
+        
+
+        /* $product = new Product;
+
         $product = new Product;
 
         $product->img = $request->img;
@@ -76,9 +81,31 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->category = $request->category;
         
-        $product->save(); 
+        $product->save();   */
 
-        return redirect('/dashboard')->with('msg', 'Produto cadastrado com sucesso!');
+        /* if($request->hasFile('img')){
+           
+            $filenameWithExt = $request->file('img')->getClientOriginalName();
+            
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            
+            $extension = $request->file('img')->getClientOriginalExtension();
+            
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            
+            $path = $request->file('img')->storeAs('public/img', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.png';
+        }
+       
+        $product = Product::create([
+            'description' => mb_strtolower($request->description),
+            'price' => mb_strtolower($request->price),
+            'category' => mb_strtolower($request->category),
+            'img' => $fileNameToStore
+        ]);
+ */
+        return redirect('/dashboard')->with('msg', 'Produto adicionado com sucesso!');
     }   
     
     public function edit($id){
