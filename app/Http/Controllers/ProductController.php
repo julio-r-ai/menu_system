@@ -112,7 +112,7 @@ class ProductController extends Controller
         return redirect('/dashboard')->with('msg', 'Produto excluido com sucesso!');
     }
 
-    public function carregado(){
-        return view('carregando');
+    public function loading(){
+        return view('loading');
     }
 }

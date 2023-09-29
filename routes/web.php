@@ -19,15 +19,13 @@ Route::get('/sushi', [ProductController::class, 'sushi']);
 Route::get('/vinho', [ProductController::class, 'vinho']);
 Route::get('/edit/{id}', [ProductController::class, 'edit']); ;
 Route::get('/addProduct', [ProductController::class, 'addProduct']);
-Route::get('/carregando', [ProductController::class, 'carregando']);
-
+Route::get('/loading', [ProductController::class, 'loading']);
 
 Route::post('/dashboard', [ProductController::class, 'store']);
 
 Route::delete('/admin/{id}', [ProductController::class, 'destroy']);      
 Route::get('/showProduto/{id}', [ProductController::class, 'showProduto']);
 Route::put('/edit/{id}', [ProductController::class, 'update']);
-
 
 Route::middleware([
     'auth:sanctum',

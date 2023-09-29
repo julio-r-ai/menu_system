@@ -16,10 +16,6 @@
             <div>
                 <h1>Editando o Produto: {{-- {{ $products->description }} --}} </h1>
             </div>
-            <div>
-                <x-label for="name" value="{{ __('URL da Imagem') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="img" :value="old('img')" required autofocus autocomplete="img" value="{{ $products->img }}" />
-            </div>
 
             <div>
                 <x-label for="name" value="{{ __('Descricao') }}" />
@@ -47,6 +43,11 @@
                     <option value="9">Sushi</option>
                     <option value="10">Vinho</option>
                 </select>
+            </div>
+
+            <div>
+                <x-label for="img" value="{{ __('Carregue uma Imagem') }}" />
+                <x-input id="name" class="block mt-1 w-full" type="file" name="img" :value="old('img')" required autofocus autocomplete="img" value="{{ $products->img }}" />
             </div>
             
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
