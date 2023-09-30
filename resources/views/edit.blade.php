@@ -10,7 +10,7 @@
 
         <x-validation-errors class="mb-4" />
 
-        <form method="POST" action="/edit/{{ $products->id }}">
+        <form method="POST" action="/edit/{{ $products->id }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div>

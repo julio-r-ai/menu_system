@@ -2,6 +2,11 @@
 <title><?php echo "Cardápio" ?></title>
 
 <div>
+    <form class="search-box" action="/" method="GET">
+        <input type="text" name="search" placeholder="Faça sua busca">
+       <a href="#" class="search-btn"><button>Buscar</button></a>
+    </form>
+
         <table>
             <thead>
                 <tr>

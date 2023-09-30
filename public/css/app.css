@@ -407,7 +407,39 @@ td img{
 #headerProducs{
   margin-top: 10px;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+
 }
+
+.search-box input{
+  height: 35px;
+  width: 250px;
+/*   float: right; */
+}
+
+.search-box button{
+  background-color: #000000;
+  color: white;
+  width: 200px;
+  height: 35px;
+  font-size: 18px;
+  border: none;
+}
+
+.search-box button:hover{
+  background-color: #000000;
+  color: white;
+  width: 200px;
+  height: 35px;
+  font-size: 18px;
+  border: none;
+  box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
+}
+
 
 #formButton{
   background-color: rgba(85, 187, 85, 0.947);
@@ -476,6 +508,9 @@ td img{
     transform: rotate(360deg);
   }
 }
+
+
+
 
 
 

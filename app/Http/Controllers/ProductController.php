@@ -67,8 +67,7 @@ class ProductController extends Controller
         return view('addProduct');
     }
 
-    public function store(Request $request){
-
+    public function store(Request $request){ 
         $product = new Product;
 
         $product->description = $request->description;
@@ -97,9 +96,10 @@ class ProductController extends Controller
         return view('edit', ['products' => $products]);
     } 
 
-    public function update(Request $request){
-        Product::findOrFail($request->id)->update($request->all()); 
-        return redirect('dashboard')->with('msg', 'Produto editado com sucesso!') ;
+    public function update(Request $request, $id){
+        Product::findOrFail($request->id)->update($request->all());
+       return redirect('dashboard')->with('msg', 'Produto editado com sucesso!') ;
+       
     }
 
     public function showProduto($id){
