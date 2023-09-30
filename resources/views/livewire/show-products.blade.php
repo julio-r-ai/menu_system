@@ -2,10 +2,10 @@
 <title><?php echo "Cardápio" ?></title>
 
 <div>
-    <form class="search-box" action="/" method="GET">
+    {{-- <form class="search-box" action="/" method="GET">
         <input type="text" name="search" placeholder="Faça sua busca">
        <a href="#" class="search-btn"><button>Buscar</button></a>
-    </form>
+     </form> --}}
 
         <table>
             <thead>
@@ -13,7 +13,7 @@
                     <th>ID</th>
                     <th>Foto</th>
                     <th>Descrição</th>
-                    <th>Preco</th>
+                    <th>Preço</th>
                     <th>Categoria</th>
                     <th></th>
                     <th>Ações</th>
