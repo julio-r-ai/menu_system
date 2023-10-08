@@ -63,6 +63,12 @@ class ProductController extends Controller
         return view('vinho', ['products' => $products]);
     }
 
+    public function dashboard(){
+        $products = Product::all();
+        $teste = 'Testando!';
+        return view('dashboard', ['products' => $products, 'teste' => $teste]);
+    }
+
     public function addProduct(){
         return view('addProduct');
     }
