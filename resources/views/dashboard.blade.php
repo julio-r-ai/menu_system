@@ -1,6 +1,6 @@
 <script src="/js/app.js" defer></script>
 <link rel="stylesheet" href="/css/app.css">
-<title><?php echo "Cardápio" ?></title>
+<title><?php echo "Cardápio" ?></title> 
 <body onload="showLoading()"></body>
 <x-app-layout>
     <x-slot name="header" style="margin-top: 80px">
@@ -25,10 +25,14 @@
             <div>
                 <form class="search-box" action="/dashboard" method="GET">
                   <input type="text" name="search" placeholder="Faça sua busca">
-                  <a href="#" class="search-btn"><button>Buscar</button></a>
+                  <button type="submit">Buscar</button>
                 </form> 
+
+                @if($search)
+                    <h1>Buscando por: {{$search}}</h1>
+                @endif
             
-                    <table>
+                    <table class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                         <thead>
                             <tr>
                                 <th>ID</th>

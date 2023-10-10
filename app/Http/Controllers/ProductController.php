@@ -64,9 +64,17 @@ class ProductController extends Controller
     }
 
     public function dashboard(){
-        $products = Product::all();
-        $teste = 'Testando!';
-        return view('dashboard', ['products' => $products, 'teste' => $teste]);
+        $search = request('search');
+        
+        if($search){
+            $products = Product::where([
+                ['description', 'category', '%'.$search.'%']
+            ])->get();
+        }else{
+            $products = Product::all();
+        }
+    
+        return view('dashboard', ['products' => $products, 'search' => $search]);
     }
 
     public function addProduct(){
