@@ -28,7 +28,7 @@
                   <button type="submit">Buscar</button>
                 </form> 
 
-                @if($search)
+                @if($search)  
                     <h1>Buscando por: {{$search}}</h1>
                 @endif
             

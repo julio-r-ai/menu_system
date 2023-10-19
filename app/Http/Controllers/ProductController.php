@@ -65,11 +65,9 @@ class ProductController extends Controller
 
     public function dashboard(){
         $search = request('search');
-        
+
         if($search){
-            $products = Product::where([
-                ['description', 'category', '%'.$search.'%']
-            ])->get();
+            $products = Product::query([['description', '%'.$search.'%']])->get();
         }else{
             $products = Product::all();
         }
