@@ -405,20 +405,32 @@ td img{
 }
 
 #headerProducs{
-  margin-top: 10px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
   width: 100%;
+}
 
+.headerTable{
+  display: flex;
+}
+
+.search-box{
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.search-box button{
+  margin-bottom: 20px;
+  margin-left: 8px;
 }
 
 .search-box input{
   height: 35px;
   width: 250px;
-/*   float: right; */
 }
 
 .search-box button{

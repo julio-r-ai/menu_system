@@ -16,23 +16,26 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div id="headerProducs">
-                <a href="/addProduct" ><button id="formButton">+ Adicionar</button></a>
+
+            <div class="headerTable">
+                <div id="headerProducs">
+                    <a href="/addProduct" ><button id="formButton">+ Adicionar</button></a>
+                </div>
+                <form class="search-box" action="/dashboard" method="GET">
+                    @csrf  
+                    <input type="text" name="search" placeholder="Faça sua busca">
+                    <button type="submit">Buscar</button>
+                </form> 
             </div>
+
+            @if($search)  
+                      <h1>Buscando por: {{$search}}</h1>
+                    @endif
+            
             {{-- <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 @livewire('show-products')
             </div> --}}
             <div>
-                <form class="search-box" action="/dashboard" method="GET">
-                  @csrf  
-                  <input type="text" name="search" placeholder="Faça sua busca">
-                  <button type="submit">Buscar</button>
-                </form> 
-
-                @if($search)  
-                    <h1>Buscando por: {{$search}}</h1>
-                @endif
-            
                     <table class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                         <thead>
                             <tr>
