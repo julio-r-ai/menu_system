@@ -68,7 +68,7 @@ class ProductController extends Controller
 
         if($search){
             $products = Product::where([
-                ['description','like', '%'.$search.'%'] 
+                ['description', 'like', '%'.$search.'%'] 
             ])->get();
         }else{
             $products = Product::all();
@@ -110,9 +110,26 @@ class ProductController extends Controller
         return view('edit', ['products' => $products]);
     } 
 
-    public function update(Request $request, $id){
-        Product::findOrFail($request->id)->update($request->all());
-       return redirect('dashboard')->with('msg', 'Produto editado com sucesso!') ;
+    public function update(Request $request){
+
+        $data = $request->all();
+
+        if($request->hasFile('img') && $request->file('img')->isValid()){
+            $requestImage = $request->img;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($request->img->getClientOriginalName().strtotime('now')).'.'.$extension;
+
+            $request->img->move(public_path('img/products'), $imageName);
+
+            $data['img'] = $imageName;
+        }
+        
+        Product::findOrFail($request->id)->update($data);
+        
+
+        return redirect('dashboard')->with('msg', 'Produto editado com sucesso!') ;
        
     }
 

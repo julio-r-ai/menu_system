@@ -14,11 +14,11 @@
             @csrf
             @method('PUT')
             <div>
-                <h1>Editando o Produto: {{-- {{ $products->description }} --}} </h1>
+                <h1>Editando o Produto:  {{ $products->description }} </h1>
             </div>
 
             <div>
-                <x-label for="name" value="{{ __('Descricao') }}" />
+                <x-label for="description" value="{{ __('Descricao') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="description" :value="old('nome')" required autofocus autocomplete="neme" value="{{ $products->description }}" />
             </div>
 
@@ -31,17 +31,17 @@
                 <x-label for="category" value="{{ __('Categoria') }}" />
                 <select name="category" id="category">
                     <option selected disabled>Selecione</option>
-                    <option value="0">Cerveja</option>
-                    <option value="1">Coquetel</option>
-                    <option value="2">Diversos</option>
-                    <option value="3">Drinks</option>
-                    <option value="4">Energético</option>
-                    <option value="5">Petiscos</option>
-                    <option value="6">Refrigerantes</option>
-                    <option value="7">Sobremesa</option>
-                    <option value="8">Suco</option>
-                    <option value="9">Sushi</option>
-                    <option value="10">Vinho</option>
+                    <option value="Cerveja">Cerveja</option>
+                    <option value="Coquetel">Coquetel</option>
+                    <option value="Diversos">Diversos</option>
+                    <option value="Drinks">Drinks</option>
+                    <option value="Energético">Energético</option>
+                    <option value="Petiscos">Petiscos</option>
+                    <option value="Refrigerantes">Refrigerantes</option>
+                    <option value="Sobremesa">Sobremesa</option>
+                    <option value="Suco">Suco</option>
+                    <option value="Sushi">Sushi</option>
+                    <option value="Vinho">Vinho</option>
                 </select>
             </div>
 

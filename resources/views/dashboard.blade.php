@@ -29,12 +29,9 @@
             </div>
 
             @if($search)  
-                      <h1>Buscando por: {{$search}}</h1>
-                    @endif
-            
-            {{-- <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                @livewire('show-products')
-            </div> --}}
+                <h1>Buscando por: {{$search}}</h1>
+            @endif
+
             <div>
                     <table class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                         <thead>
