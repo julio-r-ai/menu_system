@@ -9,7 +9,7 @@
 <div class="general">
    {{--  <h1>Pagina de Petiscos</h1> --}}
     @foreach ($products as $product)
-        @if ($product->category == 5)
+        @if ($product->category === 'Petiscos')
             <div class="card">
                 <div class="card-inter">
                     <div>

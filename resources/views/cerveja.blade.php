@@ -11,7 +11,7 @@
     {{-- <h1>Cervejas</h1> --}}
     @foreach ($products as $product)
 
-        @if ($product->category == 0)   
+        @if ($product->category === 'Servejas')   
             <div class="card">
                 <div class="card-inter">
                     <div>
