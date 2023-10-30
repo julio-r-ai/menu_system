@@ -24,6 +24,7 @@
             </div> --}}
             <div>
                 <form class="search-box" action="/dashboard" method="GET">
+                  @csrf  
                   <input type="text" name="search" placeholder="Faça sua busca">
                   <button type="submit">Buscar</button>
                 </form> 

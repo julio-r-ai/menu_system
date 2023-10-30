@@ -64,18 +64,20 @@ class ProductController extends Controller
     }
 
     public function dashboard(){
-        $search = request('search');
+        $search = request('search');  
 
         if($search){
-            $products = Product::query([['description', '%'.$search.'%']])->get();
+            $products = Product::where([
+                ['description','like', '%'.$search.'%'] 
+            ])->get();
         }else{
             $products = Product::all();
-        }
+        }  
     
         return view('dashboard', ['products' => $products, 'search' => $search]);
     }
 
-    public function addProduct(){
+    public function addProduct(){   
         return view('addProduct');
     }
 
