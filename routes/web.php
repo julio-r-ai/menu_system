@@ -17,20 +17,20 @@ Route::get('/sobremesa', [ProductController::class, 'sobremesa']);
 Route::get('/suco', [ProductController::class, 'suco']);
 Route::get('/sushi', [ProductController::class, 'sushi']);
 Route::get('/vinho', [ProductController::class, 'vinho']);
-Route::get('/edit/{id}', [ProductController::class, 'edit']); ;
-Route::get('/addProduct', [ProductController::class, 'addProduct']);
+Route::get('/edit/{id}', [ProductController::class, 'edit'])->middleware('auth'); 
+Route::get('/addProduct', [ProductController::class, 'addProduct'])->middleware('auth');
 Route::get('/loading', [ProductController::class, 'loading']);
 
-Route::post('/dashboard', [ProductController::class, 'store']);
+Route::post('/admin', [ProductController::class, 'store'])->middleware('auth');
 
-Route::delete('/admin/{id}', [ProductController::class, 'destroy']);      
-Route::get('/showProduto/{id}', [ProductController::class, 'showProduto']);
-Route::put('/edit/{id}', [ProductController::class, 'update']);
+Route::delete('/admin/{id}', [ProductController::class, 'destroy'])->middleware('auth');      
+Route::get('/showProduto/{id}', [ProductController::class, 'showProduto'])->middleware('auth');
+Route::put('/edit/{id}', [ProductController::class, 'update'])->middleware('auth');
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
+    Route::get('/admin', [ProductController::class, 'admin'])->name('admin');
 });

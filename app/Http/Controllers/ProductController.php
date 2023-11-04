@@ -63,7 +63,7 @@ class ProductController extends Controller
         return view('vinho', ['products' => $products]);
     }
 
-    public function dashboard(){
+    public function admin(){
         $search = request('search');  
 
         if($search){
@@ -74,7 +74,7 @@ class ProductController extends Controller
             $products = Product::all();
         }  
     
-        return view('dashboard', ['products' => $products, 'search' => $search]);
+        return view('admin', ['products' => $products, 'search' => $search]);
     }
 
     public function addProduct(){   
@@ -102,7 +102,7 @@ class ProductController extends Controller
 
         $product->save();  
 
-        return redirect('/dashboard')->with('msg', 'Produto adicionado com sucesso!');
+        return redirect('/admin')->with('msg', 'Produto adicionado com sucesso!');
     }   
     
     public function edit($id){
@@ -129,7 +129,7 @@ class ProductController extends Controller
         Product::findOrFail($request->id)->update($data);
         
 
-        return redirect('dashboard')->with('msg', 'Produto editado com sucesso!') ;
+        return redirect('admin')->with('msg', 'Produto editado com sucesso!') ;
        
     }
 
@@ -140,7 +140,7 @@ class ProductController extends Controller
 
     public function destroy($id){
         Product::findOrFail($id)->delete();
-        return redirect('/dashboard')->with('msg', 'Produto excluido com sucesso!');
+        return redirect('/admin')->with('msg', 'Produto excluido com sucesso!');
     }
 
     public function loading(){

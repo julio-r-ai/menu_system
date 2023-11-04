@@ -6,7 +6,7 @@
 
         <x-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('dashboard') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('admin') }}" enctype="multipart/form-data">
             @csrf
             <div>
                 <h1>Adicionar Produto</h1>

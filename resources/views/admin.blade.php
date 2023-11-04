@@ -21,7 +21,7 @@
                 <div id="headerProducs">
                     <a href="/addProduct" ><button id="formButton">+ Adicionar</button></a>
                 </div>
-                <form class="search-box" action="/dashboard" method="GET">
+                <form class="search-box" action="/admin" method="GET">
                     @csrf  
                     <input type="text" name="search" placeholder="Faça sua busca">
                     <button type="submit">Buscar</button>
