@@ -19,7 +19,7 @@ Projeto criado no intuito de desenvolver minhas habilidades com PHP/Laravel, foi
 
 ![Landingpage](image/img7.jpg)
 
-![Landingpage](image/im2.PNG)
+![Landingpage](image/img2.jpg)
 
 ![Landingpage](image/img4.PNG)
 
