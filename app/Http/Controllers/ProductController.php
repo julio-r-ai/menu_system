@@ -8,7 +8,7 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function cerveja(){
+    public function cerveja(Request $request){
         $products = Product::all();
         return view('cerveja', ['products' => $products]);  
     }

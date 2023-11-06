@@ -19,3 +19,7 @@ const hideLoading = () => {
     }
 
 };
+
+const showMenu = () => {
+    
+}

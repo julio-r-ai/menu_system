@@ -512,6 +512,53 @@ td img{
   animation: loading 0.5s ease-in infinite;
 }
 
+.menu{
+  color: rgba(255, 140, 0, 0.575);
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  cursor:pointer;
+  display: none;
+}
+
+.listMenu{
+  width: 100%;
+  background-color: #000000;
+  padding: 50px 50px 50px 20px;
+  height: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
+  position: fixed;
+  top: -0px;
+  display: none;
+}
+
+.listMenu li{
+  padding-top: 80px;
+  padding-left: 30px;
+  color: rgba(255, 140, 0, 0.575);
+  list-style: none;
+}
+
+.listMenu li ul{
+  margin-bottom: 20px;
+ 
+}
+
+.listMenu a{
+  text-decoration: none;
+  color: rgba(255, 140, 0, 0.575);
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.listMenu a:hover{
+  font-size: 21px;
+  color: #a6a6a6;
+}
+
 @keyframes loading{
   0%{
     transform: rotate(0deg);
@@ -521,13 +568,7 @@ td img{
   }
 }
 
-
-
-
-
-
-
-@media (max-width: 860px){
+@media ( min-width:830px) and (max-width: 860px){
   .header{
     width: 100%;
     height: 60px;
@@ -575,5 +616,31 @@ td img{
 
   .general{
     margin: 110px 10px 30px 10px;
+  }
+} 
+
+@media screen and (max-width: 830px){
+  .header{
+    width: 100%;
+    height: 60px;
+  }
+  
+  .header h1{
+    font-size: 40px;
+  }
+
+  .general{
+    margin: 110px 10px 30px 10px;
+  }
+
+  .sidBar{
+    display: none;
+  }
+  .menu{
+    display: block;
+  }
+
+  .open{
+    display: block;
   }
 } 
