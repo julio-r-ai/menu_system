@@ -6,7 +6,7 @@
    <title>@yield('title')</title>
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
    <link rel="stylesheet" href="/css/app.css">
-   <script src="/js/app.js" defer></script>
+   <script src="/js/app.js" defer></script>    
 </head>
 <body onload="showLoading()"> 
    @yield('content')
@@ -14,7 +14,7 @@
        <div>
            <h1>Cardápio</h1>
        </div>
-        <span class="material-symbols-outlined menu" onclick="showMenu()">
+        <span class="material-symbols-outlined menu">
             menu
        </span>
       

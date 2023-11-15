@@ -24,7 +24,7 @@ Route::get('/loading', [ProductController::class, 'loading']);
 Route::post('/admin', [ProductController::class, 'store'])->middleware('auth');
 
 Route::delete('/admin/{id}', [ProductController::class, 'destroy'])->middleware('auth');      
-Route::get('/showProduto/{id}', [ProductController::class, 'showProduto'])->middleware('auth');
+Route::get('/showProduto/{id}', [ProductController::class, 'showProduto']);
 Route::put('/edit/{id}', [ProductController::class, 'update'])->middleware('auth');
 
 Route::middleware([

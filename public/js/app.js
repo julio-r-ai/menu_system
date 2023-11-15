@@ -1,25 +1,5 @@
-const showLoading = () => {
-    const div = document.createElement('div');
-    div.classList.add('loadingAnimation');
+const btnMenu = document.querySelector('.menu');
 
-    const load = document.createElement('div');
-    load.classList.add('load');
-    
-    div.appendChild(load)
+const listMenu = document.querySelector('.listMenu');
 
-    document.body.appendChild(div);
-
-    setTimeout(()=>hideLoading(), 2000);
-};
-
-const hideLoading = () => {
-    const loadings = document.getElementsByClassName('loadingAnimation');
-    if(loadings.length){
-        loadings[0].remove();
-    }
-
-};
-
-const showMenu = () => {
-    
-}
+btnMenu.addEventListener('click', () => listMenu.classList.toggle('listMenu'));
