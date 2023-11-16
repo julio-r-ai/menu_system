@@ -521,44 +521,6 @@ td img{
   display: none; 
 }
 
-.listMenu{
-  width: 100%;
-  background-color: #000000;
-  padding: 50px 50px 50px 20px;
-  height: 100%;
-  font-size: 20px;
-  font-weight: bold;
-  box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
-  position: fixed;
-  top: -0px;
-  text-align: center;
-}
-
-.listMenu li{
-  padding-top: 80px;
-  padding-left: 30px;
-  /* color: rgba(255, 140, 0, 0.575); */
-  list-style: none;
-}
-
-.listMenu li ul{
-  margin-bottom: 20px;
- 
-}
-
-.listMenu a{
-  text-decoration: none;
-  color: rgba(255, 140, 0, 0.575);
-  font-family: 'Noto Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
-  font-family: 'Roboto Condensed', sans-serif;
-}
-
-.listMenu a:hover{
-  font-size: 21px;
-  color: #a6a6a6;
-}
-
 @keyframes loading{
   0%{
     transform: rotate(0deg);
@@ -568,7 +530,12 @@ td img{
   }
 }
 
-@media ( min-width:830px) and (max-width: 860px){
+@media (max-width: 830px){
+
+  body{
+    overflow-x: hidden;
+  }
+
   .header{
     width: 100%;
     height: 60px;
@@ -577,6 +544,92 @@ td img{
   .header h1{
     font-size: 40px;
   }
+
+  .sidBar{
+    width: 100%;
+    background-color: #000000;
+    padding: 10px 50px 50px 20px;
+    height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
+    position: fixed;
+    top: -0px;
+    text-align: center;
+    transform: translateX(100%);
+  }
+
+  .sidBar li{
+    padding-top: 80px;
+    padding-left: 30px;
+    color: rgba(255, 140, 0, 0.575); 
+    list-style: none;
+  }
+  
+  .sidBar li ul{
+    margin-bottom: 20px;
+  }
+  
+  .sidBar a{
+    text-decoration: none;
+    color: rgba(255, 140, 0, 0.575);
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+      
+  .sidBar a:hover{
+    font-size: 21px;
+    color: #a6a6a6;
+  } 
+
+  .sidBar.active ul:nth-child(2){
+    opacity: 0;
+  }
+  .sidBar.active ul:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .sidBar.active ul:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .sidBar li{
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    transition: 0.3s;
+  }
+
+  .menu{
+    display: block;
+  }
+
+  .general{
+    margin: 70px 10px 30px 10px;
+  }
+}
+
+.sidBar.active{
+  transform: translateX(0%);
+}
+
+
+/* @media ( min-width:830px) and (max-width: 860px){
+  .header{
+    width: 100%;
+    height: 60px;
+  }
+  
+  .header h1{
+    font-size: 40px;
+  }
+
   .sidBar{
     width: 100%;
     padding: 20px 50px 50px 20px;
@@ -612,36 +665,76 @@ td img{
   .sidBar a:hover{
     font-size: 17px;
     color: #a6a6a6;
-  } 
+  }   
 
   .general{
     margin: 110px 10px 30px 10px;
+  }
+
+  .listMenu{
+    display: none;
   }
 } 
 
 @media (max-width: 830px){
-  .header{
-    width: 100%;
-    height: 60px;
-  }
+    .header{
+      width: 100%;
+      height: 60px;
+    }
+    
+    .header h1{
+      font-size: 40px;
+    }
   
-  .header h1{
-    font-size: 40px;
-  }
-
-  .general{
-    margin: 110px 10px 30px 10px;
-  }
-
-  .sidBar{
-    display: none;
-  }
+    .general{
+      margin: 110px 10px 30px 10px;
+    }
   
-  .menu{
-    display: block;
+    .sidBar{
+      width: 100%;
+      background-color: #000000;
+      padding: 50px 50px 50px 20px;
+      height: 100%;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
+      position: fixed;
+      top: -0px;
+      text-align: center;
+    }
+  
+    .sidBar li{
+      padding-top: 80px;
+      padding-left: 30px;
+      color: rgba(255, 140, 0, 0.575); 
+      list-style: none;
+    }
+    
+    .sidBar li ul{
+      margin-bottom: 20px;
+    }
+    
+    .sidBar a{
+      text-decoration: none;
+      color: rgba(255, 140, 0, 0.575);
+      font-family: 'Noto Sans', sans-serif;
+      font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto Condensed', sans-serif;
+    }
+        
+    .sidBar a:hover{
+      font-size: 21px;
+      color: #a6a6a6;
+    } 
+    
+    .menu{
+      display: block;
+    }
+  
+    .open{
+      display: block;
+    } 
   }
+*/
 
-  .open{
-    display: block;
-  }
-}  
+   
