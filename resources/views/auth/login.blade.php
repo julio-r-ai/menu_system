@@ -40,9 +40,9 @@
                     </a>
                 @endif
 
-                <x-button class="ml-4">
+                {{-- <x-button class="ml-4">
                     <a href="/register">Cadastrar</a>
-                </x-button>
+                </x-button> --}}
 
                 <x-button class="ml-4">
                     Entrar

@@ -42,7 +42,7 @@ body{
 .sidBar{
   width: 230px;
   background-color: #000000;
-  padding: 50px 50px 50px 20px;
+  padding: 95px 50px 50px 50px;
   height: 100%;
   font-size: 20px;
   font-weight: bold;
@@ -51,16 +51,15 @@ body{
   top: -0px;
 }
 
-.sidBar li{
+.sidBar li{ 
   padding-top: 80px;
   padding-left: 30px;
   color: rgba(255, 140, 0, 0.575);
   list-style: none;
 }
 
-.sidBar li ul{
-  margin-bottom: 20px;
- 
+.sidBar ul{
+  margin-top: 15px;
 }
 
 .sidBar a{
@@ -174,7 +173,6 @@ form button{
   width: 100%;
   font-size: 15px;
 } 
-
 
 #formDelete button{
   margin-top: 0px;
@@ -521,8 +519,6 @@ td img{
   display: none; 
 }
 
-
-
 @keyframes loading{
   0%{
     transform: rotate(0deg);
@@ -532,7 +528,12 @@ td img{
   }
 }
 
-@media ( min-width:830px) and (max-width: 860px){
+@media (max-width: 830px){
+
+  body{
+    overflow-x: hidden;
+  }
+
   .header{
     width: 100%;
     height: 60px;
@@ -541,28 +542,30 @@ td img{
   .header h1{
     font-size: 40px;
   }
+
   .sidBar{
     width: 100%;
-    padding: 20px 50px 50px 20px;
-    height: 100px;
-    font-size: 16px;
+    background-color: #000000;
+    padding: 10px 50px 50px 20px;
+    height: 100%;
+    font-size: 20px;
+    font-weight: bold;
     box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
     position: fixed;
-    top: -0px;
-    margin: auto; 
+    top: 60px;
+    text-align: center;
+    transform: translate(100%); 
   }
-  
+
   .sidBar li{
-    padding: 48px 20px 20px  8px;
-    display: flex;
-    margin: auto;
-    gap: 20px;
-   
+    padding-top: 80px;
+    padding-left: 30px;
+    color: rgba(255, 140, 0, 0.575); 
+    list-style: none;
   }
   
   .sidBar li ul{
     margin-bottom: 20px;
-    flex-wrap: nowrap;
   }
   
   .sidBar a{
@@ -574,81 +577,31 @@ td img{
   }
       
   .sidBar a:hover{
-    font-size: 17px;
+    font-size: 21px;
     color: #a6a6a6;
   } 
 
-  .general{
-    margin: 110px 10px 30px 10px;
-  }
-
-  .listMenu{
-    display: none;
-  }
-} 
-
-@media (max-width: 830px){
-  .header{
+  .sidBar li{
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    flex-direction: column;
     width: 100%;
-    height: 60px;
-  }
-  
-  .header h1{
-    font-size: 40px;
+    transition: 0.3s;
   }
 
-  .general{
-    margin: 110px 10px 30px 10px;
-  }
-
-  .sidBar{
-    display: none;
-  }
-  
   .menu{
     display: block;
   }
 
-  .open{
-    display: block;
+  .general{
+    margin: 70px 10px 30px 10px;
   }
+}
 
-  .listMenu{
-    width: 100%;
-    background-color: #000000;
-    padding: 50px 50px 50px 20px;
-    height: 100%;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 2px 2px 7px 1px rgba(103, 102, 102, 0.718);
-    position: fixed;
-    top: -0px;
-    text-align: center;
-    display: none;
-  }
-  
-  .listMenu li{
-    padding-top: 80px;
-    padding-left: 30px;
-    color: rgba(255, 140, 0, 0.575); 
-    list-style: none;
-  }
-  
-  .listMenu li ul{
-    margin-bottom: 20px;
-   
-  }
-  
-  .listMenu a{
-    text-decoration: none;
-    color: rgba(255, 140, 0, 0.575);
-    font-family: 'Noto Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Roboto Condensed', sans-serif;
-  }
-  
-  .listMenu a:hover{
-    font-size: 21px;
-    color: #a6a6a6;
-  }
+.sidBar.active{
+  transform: translateX(0%);
 }  
